@@ -1,5 +1,4 @@
 // Enhanced image data with more realistic content
-// Enhanced image data with more realistic content
 const imageData = [
     {
         id: 1,
@@ -108,6 +107,7 @@ const themeToggle = document.getElementById('themeToggle');
 const filterLinks = document.querySelectorAll('.nav-link[data-filter]');
 const collectionCards = document.querySelectorAll('.collection-card');
 const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+const navbarCollapse = document.getElementById('navbarNav');
 
 // Current modal image reference
 let currentModalImage = null;
@@ -124,7 +124,7 @@ function setupEventListeners() {
     // Theme toggle
     themeToggle.addEventListener('click', toggleTheme);
     
-    // Filter links
+    // Filter links - with auto-hide navbar on mobile
     filterLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -134,6 +134,9 @@ function setupEventListeners() {
             filterLinks.forEach(l => l.classList.remove('active'));
             this.classList.add('active');
             
+            // Auto-hide navbar on mobile after selection
+            autoHideNavbar();
+            
             // Load filtered gallery
             loadGallery(filter);
             
@@ -142,7 +145,7 @@ function setupEventListeners() {
         });
     });
     
-    // Collection cards
+    // Collection cards - with auto-hide navbar on mobile
     collectionCards.forEach(card => {
         card.addEventListener('click', function() {
             const collection = this.getAttribute('data-collection');
@@ -150,6 +153,9 @@ function setupEventListeners() {
             // Update active state
             filterLinks.forEach(l => l.classList.remove('active'));
             document.querySelector(`[data-filter="${collection}"]`).classList.add('active');
+            
+            // Auto-hide navbar on mobile after selection
+            autoHideNavbar();
             
             // Load filtered gallery
             loadGallery(collection);
@@ -165,6 +171,22 @@ function setupEventListeners() {
             updateModalButtons(currentModalImage);
         }
     });
+}
+
+// Auto-hide navbar on mobile devices
+function autoHideNavbar() {
+    if (window.innerWidth < 992) { // Bootstrap lg breakpoint
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.getElementById('navbarNav');
+        
+        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+            // Use Bootstrap's collapse method to hide the navbar
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                toggle: false
+            });
+            bsCollapse.hide();
+        }
+    }
 }
 
 // Load gallery with optional filter
