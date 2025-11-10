@@ -92,7 +92,7 @@ const imageData = [
         id: 9,
         src: 'images/collection3/Filo_my_puppie.jpg',
         title: 'Filo my puppie',
-        description: 'Filo my AI pet who guards my parcel in SecondLife. He is very loyal and friendly, always excited to see me when I log in. Filo loves to play fetch and go on adventures around the virtual world.',
+        description: 'Filo my AI pet who guards my parcel in Second Life. He is very loyal and friendly, always excited to see me when I log in. Filo loves to play fetch and go on adventures around the virtual world.',
         date: '10-11-2025',
         collection: 'collection3',
         likes: 0,
@@ -406,7 +406,7 @@ function getCollectionName(collectionId) {
     const names = {
         'collection1': 'Nature',
         'collection2': 'Personal',
-        'collection3': 'SecondLife'
+        'collection3': 'Second Life'
     };
     
     return names[collectionId] || collectionId;
