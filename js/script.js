@@ -15,7 +15,7 @@ const imageData = [
     {
         id: 2,
         src: 'images/collection1/Blue_Tit.jpg',
-        title: 'BLue Tit',
+        title: 'Blue Tit',
         description: 'Eurasian blue tit, is a common small bird with a blue cap, yellow breast, green back, and white cheeks, often found in woodlands, parks, and gardensBeautiful sunrise over the  range with golden light illuminating the peaks. The morning mist creates a magical atmosphere in the valley below.',
         date: '24-10-2025',
         collection: 'collection1',
