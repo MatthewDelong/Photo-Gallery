@@ -290,7 +290,7 @@ body {
     transform: translateX(0);
 }
 
-/* Gallery Cards */
+/* Gallery Cards - FIXED IMAGE CROPPING */
 .gallery-card {
     border-radius: 15px;
     overflow: hidden;
@@ -300,6 +300,8 @@ body {
     margin-bottom: 1.5rem;
     height: 100%;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .gallery-card:hover {
@@ -310,12 +312,23 @@ body {
 .card-img-container {
     position: relative;
     overflow: hidden;
-    height: 200px;
+    flex: 0 0 auto; /* Don't grow or shrink */
+    width: 100%;
+}
+
+/* Use aspect ratio instead of fixed height for responsive images */
+.card-img-container::before {
+    content: '';
+    display: block;
+    padding-top: 75%; /* 4:3 aspect ratio */
 }
 
 .card-img-top {
-    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
     object-fit: cover;
     transition: var(--transition);
 }
@@ -344,6 +357,9 @@ body {
 
 .card-body {
     padding: 1rem;
+    flex: 1; /* Take remaining space */
+    display: flex;
+    flex-direction: column;
 }
 
 .card-title {
@@ -358,8 +374,7 @@ body {
     font-size: 0.85rem;
     margin-bottom: 1rem;
     overflow: hidden;
-    max-height: 2.8em;
-    line-height: 1.4;
+    flex: 1; /* Take available space */
 }
 
 .card-footer {
@@ -369,6 +384,7 @@ body {
     padding: 0.75rem 1rem;
     background: transparent;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Don't shrink */
 }
 
 .card-date {
@@ -411,7 +427,8 @@ body {
 .modal-image {
     width: 100%;
     height: 400px;
-    object-fit: cover;
+    object-fit: contain; /* Show full image in modal */
+    background: var(--bg-secondary);
 }
 
 .modal-sidebar {
@@ -507,12 +524,14 @@ body {
         margin-bottom: 1rem;
     }
     
-    .card-img-container {
-        height: 180px;
+    /* Mobile-specific image adjustments */
+    .card-img-container::before {
+        padding-top: 66.67%; /* 3:2 aspect ratio for mobile */
     }
     
     .modal-image {
         height: 300px;
+        object-fit: contain; /* Ensure full image visible in modal */
     }
     
     .modal-sidebar {
@@ -551,12 +570,14 @@ body {
         height: 180px;
     }
     
-    .card-img-container {
-        height: 150px;
+    /* Mobile-specific image adjustments */
+    .card-img-container::before {
+        padding-top: 100%; /* 1:1 aspect ratio for very small screens */
     }
     
     .modal-image {
         height: 250px;
+        object-fit: contain; /* Ensure full image visible in modal */
     }
 }
 
