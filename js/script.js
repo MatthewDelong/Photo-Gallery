@@ -69,7 +69,7 @@ const imageData = [
     },
     {
         id: 7,
-        src: 'images/collection3/Green_Story.png',
+        src: 'images/collection3/Green_Story.jpg',
         title: 'Green Story',
         description: 'Peaceful and charming place, especially beautiful when it rains. It\'s a perfect spot for couples seeking a romantic date, offering a quiet and intimate atmosphere. The location is also ideal for photography.',
         date: '10-11-2025',
@@ -80,7 +80,7 @@ const imageData = [
     },
     {
         id: 8,
-        src: 'images/collection3/Xmas_Sim.png',
+        src: 'images/collection3/Xmas_Sim.jpg',
         title: 'Winter Ice Christmas Fest',
         description: 'City streets illuminated by neon signs and passing traffic at night. The motion blur of vehicles creates dynamic light trails.',
         date: '10-11-2025',
@@ -91,7 +91,7 @@ const imageData = [
     },
      {
         id: 9,
-        src: 'images/collection3/Filo_my_puppie.png',
+        src: 'images/collection3/Filo_my_puppie.jpg',
         title: 'Filo my puppie',
         description: 'Filo my AI pet who guards my parcel in SecondLife. He is very loyal and friendly, always excited to see me when I log in. Filo loves to play fetch and go on adventures around the virtual world.',
         date: '10-11-2025',

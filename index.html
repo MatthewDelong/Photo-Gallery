@@ -16,17 +16,30 @@
     <nav class="navbar navbar-expand-lg navbar-glass fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="bi bi-camera2 me-2"></i>PixelGallery
+                <i class="bi bi-camera2 me-2"></i>Photo Gallery
             </a>
-            <div class="navbar-nav flex-row">
-                <a class="nav-link me-3 active" href="#" data-filter="all">Explore</a>
-                <a class="nav-link me-3" href="#" data-filter="collection1">Nature</a>
-                <a class="nav-link me-3" href="#" data-filter="collection2">Personal</a>
-                <a class="nav-link me-3" href="#" data-filter="collection3">SecondLife</a>
-            </div>
-            <div class="d-flex align-items-center">
-                <div class="theme-toggle me-3" id="themeToggle">
-                    <i class="bi bi-moon"></i>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" data-filter="all">Explore</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-filter="collection1">Nature</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-filter="collection2">Personal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-filter="collection3">SecondLife</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <div class="theme-toggle" id="themeToggle">
+                        <i class="bi bi-moon"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -38,8 +51,7 @@
             <div class="row align-items-center min-vh-100">
                 <div class="col-lg-6">
                     <h1 class="hero-title">Discover Beautiful Moments</h1>
-                    <p class="hero-subtitle">A curated collection of stunning photography from around the world. Explore
-                        nature, urban landscapes, and captivating portraits.</p>
+                    <p class="hero-subtitle">A curated collection of stunning photography from around the world. Explore nature, urban landscapes, and captivating portraits.</p>
                     <button class="btn btn-primary btn-explore" onclick="scrollToGallery()">
                         <i class="bi bi-grid-3x3-gap me-2"></i>Explore Gallery
                     </button>
